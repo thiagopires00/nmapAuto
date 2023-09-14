@@ -1,8 +1,8 @@
 # nmapAuto
-
-1- Run sudo bash requirements.sh
-2- Run sudo ./runNmap.sh
-3-Thats it
+Open a terminal in the nmapAuto folder
+Run "sudo bash requirements.sh"
+Run "sudo ./runNmap.sh"
+Thats it
 
 How it works
 
