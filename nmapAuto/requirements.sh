@@ -20,7 +20,7 @@ install_vulners() {
 
 # Function to set execution permissions for specific scripts
 set_execution_permissions() {
-  chmod +x ./complete_scan.sh ./fast_scan.sh ./stealthy_scan.sh ./vulnerability_scan.sh
+  chmod +x ./complete_scan.sh ./fast_scan.sh ./stealthy_scan.sh ./vulnerability_scan.sh ./runNmap.sh
   echo "Execution permissions set for all scripts."
 }
 
