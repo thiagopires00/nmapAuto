@@ -59,10 +59,10 @@ run_nmap_scan() {
 
   # Vulnerability scanning
   echo "Warning: Running vulnerability scans can be intrusive. Proceed with caution." >> $output_file
-  nmap -sV -Pn --script=vuln -p $open_ports $target >> $output_file
+  nmap -sV -Pn --script=vuln,safe -p $open_ports $target >> $output_file
 
   # Additional Scans
-  nmap -Pn --script=safe,discovery -p $open_ports $target >> $output_file
+ 
   nmap -Pn --traceroute -p $open_ports $target >> $output_file
   nmap -Pn -R -p $open_ports $target >> $output_file
   nmap -Pn -sU -p 53,67-69,161 $target >> $output_file  # UDP scan for common ports
