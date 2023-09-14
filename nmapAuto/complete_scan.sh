@@ -51,24 +51,11 @@ run_nmap_scan() {
 
   echo "Open ports: $open_ports" >> $output_file
 
-  # Version detection with all probes
-  nmap -Pn -sV --version-all -p $open_ports $target >> $output_file
-
-  # OS detection
-  nmap -Pn -O -p $open_ports $target >> $output_file
-
-  # Vulnerability scanning
+  # Consolidated Nmap scan with multiple options
   echo "Warning: Running vulnerability scans can be intrusive. Proceed with caution." >> $output_file
-  nmap -sV -Pn --script=vuln,safe -p $open_ports $target >> $output_file
-
-  # Additional Scans
- 
-  nmap -Pn --traceroute -p $open_ports $target >> $output_file
-  nmap -Pn -R -p $open_ports $target >> $output_file
-  nmap -Pn -sU -p 53,67-69,161 $target >> $output_file  # UDP scan for common ports
-  nmap -Pn -sO $target >> $output_file  # IP Protocol scan
-  nmap -Pn -oX $xml_output_file -p $open_ports $target  # XML output
+  nmap -Pn -sV --version-all -O --script=vuln,safe -p $open_ports --traceroute -R -sU -p 53,67-69,161 -sO -oX $xml_output_file $target >> $output_file
 }
+
 
 # Read targets from a text file
 input="nmap_target_list.txt"
