@@ -17,3 +17,4 @@ Dynamic Rate Limiting: Customizable rate limiting based on the target's sensitiv
 Structured Output: All scan results are saved in subdirectories, organized by date and time, including XML files for further analysis.
 
 Audit Logging: An audit log is generated for accountability, tracking who initiated the scan and when.
+https://www.youtube.com/watch?v=ycRVXsn7IC8&feature=youtu.be
